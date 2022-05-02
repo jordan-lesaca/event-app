@@ -1,32 +1,25 @@
 {
-  "name": "app",
-  "private": true,
+  "name": "Event-Manager",
+  "private": "true",
   "dependencies": {
-    "@babel/core": "7",
-    "@babel/plugin-transform-runtime": "7",
-    "@babel/preset-env": "7",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/runtime": "7",
-    "babel-loader": "8",
-    "compression-webpack-plugin": "9",
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/turbo-rails": "^7.1.1",
+    "esbuild": "^0.14.25",
+    "pikaday": "^1.8.2",
     "prop-types": "^15.8.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "shakapacker": "6.2.0",
-    "terser-webpack-plugin": "5",
-    "webpack": "5",
-    "webpack-assets-manifest": "5",
-    "webpack-cli": "4",
-    "webpack-merge": "5"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.2.2",
+    "react-toastify": "^8.2.0"
   },
-  "version": "0.1.0",
-  "browserslist": [
-    "defaults"
-  ],
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --loader:.js=jsx",
+    "watch": "esbuild app/javascript/*.* --watch --bundle --outdir=app/assets/builds --loader:.js=jsx"
+  },
   "devDependencies": {
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
-    "react-refresh": "^0.13.0",
-    "webpack-dev-server": "^4.8.1",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
